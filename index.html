@@ -1033,7 +1033,7 @@ nav.scrolled {
 
 .roadmap-line {
   position: absolute;
-  left: 24px;
+  inset-inline-start: 24px;
   top: 0;
   bottom: 0;
   width: 2px;
@@ -1041,7 +1041,7 @@ nav.scrolled {
 }
 
 @media (max-width: 768px) {
-  .roadmap-line { left: 20px; }
+  .roadmap-line { inset-inline-start: 20px; }
 }
 
 .roadmap-item {
@@ -1367,13 +1367,6 @@ html[dir="rtl"] .mockup-result-price { direction: ltr; text-align: right; }
 html[dir="rtl"] .mockup-item-price { direction: ltr; }
 
 html[dir="rtl"] .solution-visual { direction: ltr; }
-html[dir="rtl"] .roadmap-line { left: auto; right: 24px; }
-@media (max-width: 768px) {
-  html[dir="rtl"] .roadmap-line { right: 20px; }
-}
-html[dir="rtl"] .roadmap-item { flex-direction: row-reverse; }
-html[dir="rtl"] .roadmap-content { text-align: right; }
-html[dir="rtl"] .roadmap-tags { justify-content: flex-end; }
 
 html[dir="rtl"] .hero-metric-value { direction: ltr; display: inline-block; }
 html[dir="rtl"] .market-stat-value { direction: ltr; display: inline-block; }
@@ -2112,9 +2105,9 @@ html[dir="rtl"] .footer-inner { flex-direction: row-reverse; }
       <p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;">
         <span data-i18n="teamJoin">Interested in joining or partnering? We'd love to hear from you.
       </span></p>
-      <a href="mailto:team@getworth.io" class="btn btn-secondary">
+      <a href="/cdn-cgi/l/email-protection#e591808488a5828091928a97918dcb8c8a" class="btn btn-secondary">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        team@getworth.io
+        <span class="__cf_email__" data-cfemail="2f5b4a4e426f484a5b58405d5b47014640">[email&#160;protected]</span>
       </a>
     </div>
   </div>
@@ -2142,17 +2135,17 @@ html[dir="rtl"] .footer-inner { flex-direction: row-reverse; }
       </span></p>
 
       <div class="cta-actions">
-        <a href="mailto:invest@getworth.io" class="btn btn-primary" style="padding:16px 32px;font-size:15px;">
+        <a href="/cdn-cgi/l/email-protection#6f0601190a1c1b2f080a1b18001d1b07410600" class="btn btn-primary" style="padding:16px 32px;font-size:15px;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
           <span data-i18n="investCta1">Request Investor Deck</span>
         </a>
-        <a href="mailto:hello@getworth.io" class="btn btn-secondary" style="padding:16px 32px;font-size:15px;">
+        <a href="/cdn-cgi/l/email-protection#d5bdb0b9b9ba95b2b0a1a2baa7a1bdfbbcba" class="btn btn-secondary" style="padding:16px 32px;font-size:15px;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           <span data-i18n="investCta2">Contact Founders</span>
         </a>
       </div>
 
-      <p class="cta-note"><span data-i18n="investNote">invest@getworth.io · Pre-Seed · 2026</span></p>
+      <p class="cta-note"><span data-i18n="investNote"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0d9dec6d5c3c4f0d7d5c4c7dfc2c4d89ed9df">[email&#160;protected]</a> · Pre-Seed · 2026</span></p>
     </div>
   </div>
 </section>
@@ -2165,7 +2158,7 @@ html[dir="rtl"] .footer-inner { flex-direction: row-reverse; }
     <div class="footer-inner">
       <div class="footer-copy"><span data-i18n="footerCopy">© 2026 GetWorth. All rights reserved.</span></div>
       <div class="footer-links">
-        <a href="mailto:hello@getworth.io">Contact</a>
+        <a href="/cdn-cgi/l/email-protection#adc5c8c1c1c2edcac8d9dac2dfd9c583c4c2">Contact</a>
         <a href="#">Privacy</a>
         <a href="#">Terms</a>
       </div>
@@ -2176,7 +2169,7 @@ html[dir="rtl"] .footer-inner { flex-direction: row-reverse; }
 <!-- ═══════════════════════════════════════
      SCRIPTS
      ═══════════════════════════════════════ -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ═══════════════════════════════════════
 // GETWORTH i18n SYSTEM
 // ═══════════════════════════════════════
@@ -2563,22 +2556,4 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', (e) => {
-    e.preventDefault();
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
-
-// Apply saved language on load
-applyLanguage(currentLang);
-</script>
-
-</body>
-</html>
+document
