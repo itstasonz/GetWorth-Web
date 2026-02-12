@@ -1033,15 +1033,16 @@ nav.scrolled {
 
 .roadmap-line {
   position: absolute;
-  inset-inline-start: 24px;
+  left: 24px;
   top: 0;
   bottom: 0;
   width: 2px;
   background: linear-gradient(180deg, var(--accent), var(--border));
+  z-index: 0;
 }
 
 @media (max-width: 768px) {
-  .roadmap-line { inset-inline-start: 20px; }
+  .roadmap-line { left: 20px; }
 }
 
 .roadmap-item {
@@ -1367,6 +1368,14 @@ html[dir="rtl"] .mockup-result-price { direction: ltr; text-align: right; }
 html[dir="rtl"] .mockup-item-price { direction: ltr; }
 
 html[dir="rtl"] .solution-visual { direction: ltr; }
+
+/* RTL Roadmap: only flip the line position. 
+   Flexbox auto-reverses in dir="rtl", so do NOT add flex-direction: row-reverse.
+   That was the original bug — it double-flipped, splitting dot from content. */
+html[dir="rtl"] .roadmap-line { left: auto; right: 24px; }
+@media (max-width: 768px) {
+  html[dir="rtl"] .roadmap-line { left: auto; right: 20px; }
+}
 
 html[dir="rtl"] .hero-metric-value { direction: ltr; display: inline-block; }
 html[dir="rtl"] .market-stat-value { direction: ltr; display: inline-block; }
